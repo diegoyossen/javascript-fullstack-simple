@@ -1,0 +1,74 @@
+1 - npm init -y
+2 - npm install express mongoose morgan multer dotenv cross-env cors
+
+express: framework servidor backend 
+mongoose: modulo para conexion bd mongo
+morgan: ver por consola las peticiones http
+multer: subir imagenes al servidor
+dotenv: variables de entorno (no contraseñas en el codigo)
+cross-env: definir el entorno de produccion
+cors: enlace entre el servidor del backend y frontend
+
+3 - Dentro de la carpeta backend creamos los archivos: 
+    index.js: arrancamos la app
+    database.js: conectar bd
+    y la carpeta models: modelos de datos dentro de la bd
+    y la carpeta routers: rutas u url
+
+4 - Agregamos un modolu
+    npm install fs-extra
+    fs-extra: soporta promesas async y await
+
+5 - Inicializar el servidor express
+    dentro del archivo index.js
+    
+        // Modulos
+        const express = require('express');
+
+        // Inicializaciones
+        const app = express();
+
+        // Settings
+        app.set('port',3000)
+
+        // Start servidor
+        app.listen(app.get('port'), () => {
+            console.log('Server on port ', app.get('port'));
+        });
+
+    para probar desde la consola node backend/index.js y desde el navegador localhost:3000
+
+6 - Inicializar morgan:
+
+    // Modulos    
+    const morgan = require('morgan');
+
+    // Middlewares
+    app.use(morgan('dev'));
+
+7 - npm install nodemon -D 
+    nodemon: ayuda en el desarrollo
+    -D: no dependencia principal
+    desde la consola npx nodemon backend/index.js
+    dentro del package.json dentro de la seccion scripts => "dev" : "nodemon backend/index.js"
+    ahora npm run dev
+
+8 - multer
+    // Modulos
+    const multer = require('multer');
+    const path = require('path');
+
+    // Middlewares
+    const storage = multer.diskStorage({
+        destination: path.join(__dirname,'public/uploads'),
+        filename(req,file,cb){
+            cb(null,new Date().getTime() + path.extname(file.originalname));
+        }
+    });
+    app.use(multer({storage}).single('image'));  
+
+9 - Ayuda a recivir-enviar backend-frontend json
+    app.use(express.urlencoded({extended: false}));
+    app.use(express.json());
+
+10 - 
