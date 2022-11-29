@@ -71,4 +71,6 @@ cors: enlace entre el servidor del backend y frontend
     app.use(express.urlencoded({extended: false}));
     app.use(express.json());
 
-10 - 
+10 - Rutas del servidor
+
+11 - Conectar base de datos    
