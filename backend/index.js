@@ -6,6 +6,7 @@ const path = require('path');
 
 // Inicializaciones
 const app = express();
+require('./database');
 
 // Settings
 app.set('port',3000)
