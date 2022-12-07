@@ -74,3 +74,9 @@ cors: enlace entre el servidor del backend y frontend
 10 - Rutas del servidor
 
 11 - Conectar base de datos    
+
+12 - Dependencias para el frontend
+    npm install webpack webpack-cli html-webpack-plugin css-loader style-loader mini-css-extract-plugin webpack-dev-server timeago.js -D
+
+13 - Dentro de la carpeta frontend creamos los archivos:
+    index.html,app.js ,UI.js  y las carpetas: models,services,styles
