@@ -79,4 +79,4 @@ cors: enlace entre el servidor del backend y frontend
     npm install webpack webpack-cli html-webpack-plugin css-loader style-loader mini-css-extract-plugin webpack-dev-server timeago.js -D
 
 13 - Dentro de la carpeta frontend creamos los archivos:
-    index.html,app.js ,UI.js  y las carpetas: models,services,styles
+    index.html,app.js ,UI.js  y las carpetas: models,services,styles fsdfsdfsdfs
